@@ -1,4 +1,24 @@
 # 📖 Manual Whisperer
+Webapp to help workers debug machine alarms. Key features include:
+- Agentic RAG chatbot with:
+  - Tool to answer machine alarm questions from the internal knowledge base
+  - Tool to find information from manuals
+  - Built-in support via agent's pre-trained knowledge for language translation for non-English-speaking worker
+- Dashboard for viewing machine alarm statuses, managing knowledge base of machine alarms, and analytics (machine error trends, frequent questions asked, error counts etc)
+
+This project was developed under the course IS483 IS Project Experience.
+
+## Demo
+1-min video demo of key features
+
+https://github.com/user-attachments/assets/5ec87b40-30d5-4ca6-9ffc-00b352db89c6
+
+## Poster
+![IS483 - Manual Whisperer Poster](https://github.com/user-attachments/assets/aa8f2039-e0fb-43ff-881a-7e8cab6b33a5)
+
+
+## Architecture
+![architecture](https://github.com/user-attachments/assets/c8ab9b16-cb8b-49bb-9dce-41ad19cf07ae)
 
 ## Documentation
 
@@ -124,3 +144,5 @@ Do the following to start off with a new database:
 ## Indexing new manuals (via scripts)
 
 Follow the instructions in `src/rag/README.md`.
+
+
