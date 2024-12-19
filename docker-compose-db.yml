@@ -1,0 +1,21 @@
+# Use postgres/example user/password credentials
+volumes:
+  db_data:
+    external: true # use existing volume
+
+services:
+  db:
+    image: pgvector/pgvector:pg17 # postgres with pgvector extension
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

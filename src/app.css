@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --info: 204 94% 94%;
+    --info-foreground: 199 89% 48%;
+
+    --success: 149 80% 90%;
+    --success-foreground: 160 84% 39%;
+
+    --warning: 48 96% 89%;
+    --warning-foreground: 25 95% 53%;
+
+    --error: 0 93% 94%;
+    --error-foreground: 0 84% 60%;
+
+    --ring: 240 5.9% 10%;
+
+    --radius: 0.5rem;
+
+    --toast-border-radius: 0.5rem;
+    --toast-padding: 1rem;
+    --toast-width: 356px;
+  }
+
+  .dark,
+  [data-kb-theme="dark"] {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --info: 204 94% 94%;
+    --info-foreground: 199 89% 48%;
+
+    --success: 149 80% 90%;
+    --success-foreground: 160 84% 39%;
+
+    --warning: 48 96% 89%;
+    --warning-foreground: 25 95% 53%;
+
+    --error: 0 93% 94%;
+    --error-foreground: 0 84% 60%;
+
+    --ring: 240 4.9% 83.9%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container {
+    @apply px-4;
+  }
+}
+
+.codex-editor__redactor {
+  padding-bottom: 0px !important; 
+}
+
+/* editorjs, e.g. in alarm form */
+h1.ce-header{
+  @apply text-3xl font-bold
+}
+h2.ce-header{
+  @apply text-2xl font-semibold
+}
+h3.ce-header{
+  @apply text-xl font-semibold
+}
+h4.ce-header{
+  @apply text-lg font-semibold
+}
+h5.ce-header{
+  @apply text-base font-semibold
+}
+h6.ce-header{
+  @apply text-base font-semibold
+}
+
+/* remove stretched from editorjs image */
+.ce-popover-item[data-item-name="stretched"] {
+  display: none !important;
+}
+
+.ce-toolbar__actions {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.ce-block__content,
+.ce-toolbar__content {
+  max-width: calc(100% - 100px) !important;
+}
+
+.cdx-block {
+  max-width: 100% !important;
+}
+
+/* Rendering editorjs content, e.g. in machine detail page */
+.editorjs-content h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+}
+
+.editorjs-content h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+}
+
+.editorjs-content h3 {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.editorjs-content h4 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+}
+
+.editorjs-content p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.editorjs-content ul, .editorjs-content ol {
+  padding-left: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.editorjs-content li {
+  margin-bottom: 0.5em;
+}
+
+.editorjs-content a {
+  color: #0000EE;
+  text-decoration: underline;
+}
+
+/* Attached file in editorjs */
+.attached-file {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.attached-file a {
+  color: #0066cc;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.file-size {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.toaster {
+  --viewport-padding: 24px;
+}
+
+.toast:hover {
+  transform: none !important;
+}
